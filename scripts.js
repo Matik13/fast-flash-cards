@@ -170,18 +170,26 @@ function startTypingTest() {
 }
 
 function loadNextTypingQuestion() {
-	document.getElementById('next-question').classList.add('hidden')
-	const unknownWords = words.filter(word => !knownWords.includes(word.english))
-	if (unknownWords.length === 0) {
-		updateProgress()
-		return
-	}
-	const randomWord = unknownWords[Math.floor(Math.random() * unknownWords.length)]
+  document.getElementById('next-question').classList.add('hidden');
+  const unknownWords = words.filter(word => !knownWords.includes(word.english));
+  if (unknownWords.length === 0) {
+    updateProgress();
+    return;
+  }
+  const randomWord = unknownWords[Math.floor(Math.random() * unknownWords.length)];
 
-	document.getElementById('typing-question').innerText = randomWord.polish
-	document.getElementById('typing-answer').value = ''
-	document.getElementById('typing-result').innerText = ''
+  document.getElementById('typing-question').innerText = randomWord.polish;
+  document.getElementById('typing-answer').value = '';
+  document.getElementById('typing-result').innerText = '';
+
+  // Nasłuchiwacz klawisza Enter
+  document.getElementById('typing-answer').addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+      checkTypingAnswer();
+    }
+  });
 }
+
 
 function checkTypingAnswer() {
 	const question = document.getElementById('typing-question').innerText
