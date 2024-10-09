@@ -159,7 +159,7 @@ function checkMultipleChoiceAnswer(selected, correct) {
 		knownWords.push(correct)
 		updateProgress()
 	}
-	setTimeout(loadNextMultipleChoiceQuestion, 1000)
+	setTimeout(loadNextMultipleChoiceQuestion, 10)
 }
 
 function startTypingTest() {
