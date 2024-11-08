@@ -1,53 +1,54 @@
-body, html {
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #121212;
-    color: #ffffff;
-  }
-  
-  #app {
-    text-align: center;
-    width: 400px;
-  }
-  
-  .hidden {
-    display: none;
-  }
-  
-  #flashcard {
-    border: 1px solid #ccc;
-    padding: 20px;
-    margin-bottom: 10px;
-    text-align: center;
-  }
-  
-  button {
-    margin: 5px;
-    padding: 10px;
-    background-color: #333;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #555;
-  }
-  
-  #multiple-choice-result, #typing-result {
-    font-weight: bold;
-  }
-  
-  .correct {
-    color: green;
-  }
-  
-  .incorrect {
-    color: red;
-  }
-  
+body,
+html {
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	background-color: #121212;
+	color: #ffffff;
+}
+
+#app {
+	text-align: center;
+	width: 400px;
+}
+
+.hidden {
+	display: none;
+}
+
+#flashcard {
+	border: 1px solid #ccc;
+	padding: 20px;
+	margin-bottom: 10px;
+	text-align: center;
+}
+
+button {
+	margin: 5px;
+	padding: 10px;
+	background-color: #333;
+	color: #fff;
+	border: none;
+	cursor: pointer;
+}
+
+button:hover {
+	background-color: #555;
+}
+
+#multiple-choice-result,
+#typing-result {
+	font-weight: bold;
+}
+
+.correct {
+	color: green;
+}
+
+.incorrect {
+	color: red;
+}
