@@ -209,7 +209,7 @@ const words = {
 	"be dead on one's feet": 'padać ze zmęczenia',
 	'front man': 'lider zespołu',
 	'get away scot-free': 'wyjść bez szwanku',
-	"get out of sb's comfort zone": 'wyjść z czyjejś strefy komfortu',
+	"get out of sb s comfort zone": 'wyjść z czyjejś strefy komfortu',
 	'have got two left feet': 'być jak słoń w składzie porcelany',
 	'push oneself to the limit': 'dać z siebie wszystko',
 	'rise to an occasion': 'stanąć na wysokości zdania',
