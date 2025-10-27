@@ -34,7 +34,6 @@ const words = {
 	'torn ligament': 'naderwane więzadło',
 	tremble: 'drżeć',
 	'ache all over': 'być obolałym',
-	'be as fit as a fiddle': 'być zdrowy jak ryba',
 	bewildered: 'zdezorientowany',
 	'feel off-colour': 'kiepsko się czuć',
 	'feel under the weather': 'źle się czuć',
@@ -263,6 +262,7 @@ function restart() {
 	document.getElementById('mode-select').classList.remove('hidden')
 	updateProgress()
 }
+
 
 
 
