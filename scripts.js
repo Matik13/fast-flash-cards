@@ -18,7 +18,6 @@ const words = {
 	'acute tension': 'silne napięcie',
 	'be black and blue': 'być posiniaczonym',
 	bruise: 'siniak',
-	bump: 'guz',
 	'chronic distress': 'przewlekły ból',
 	'come out in a rash': 'dostać wysypki',
 	diarrhea: 'biegunka',
@@ -261,4 +260,5 @@ function restart() {
 	document.getElementById('mode-select').classList.remove('hidden')
 	updateProgress()
 }
+
 
