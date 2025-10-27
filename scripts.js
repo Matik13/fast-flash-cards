@@ -77,7 +77,7 @@ const words = {
 	'speech therapist': 'logopeda',
 	stammer: 'jąkać się',
 	'be clean': 'nie brać narkotyków',
-	"beat one's depression": 'pokonać depresję',
+	"beat one`s depression": 'pokonać depresję',
 	'binge-watching': 'maraton filmowy/telewizyjny',
 	'come off drugs': 'rzucić narkotyki',
 	'get hopelessly hooked on': 'zatracić się w nałogu',
