@@ -21,7 +21,7 @@ const words = {
 	bump: 'guz',
 	'chronic distress': 'przewlekły ból',
 	'come out in a rash': 'dostać wysypki',
-	diarrhoea: 'biegunka',
+	diarrhea: 'biegunka',
 	'have blurred vision': 'widzieć nieostro',
 	irritability: 'drażliwość',
 	measles: 'odra',
@@ -261,3 +261,4 @@ function restart() {
 	document.getElementById('mode-select').classList.remove('hidden')
 	updateProgress()
 }
+
