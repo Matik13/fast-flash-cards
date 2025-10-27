@@ -65,7 +65,8 @@ const words = {
 	'high cholesterol': 'wysoki cholesterol',
 	insomnia: 'bezsenność',
 	'lack of physical activity': 'brak aktywności fizycznej',
-	lump: 'guz',
+	lump: 'guz 1',
+	bump: 'guz 2',
 	obesity: 'nadwaga',
 	'prevent hypertension': 'zapobiegać nadciśnieniu',
 	'sleeping pills': 'tabletki nasenne',
@@ -99,6 +100,8 @@ const words = {
 	'meticulous records': 'skrupulatne zapisy',
 	'sense of sth': 'poczucie czegoś',
 	'small/large measure of sth': 'odrobina/dużo czegoś',
+	'traumatising experience': 'traumatyczne doświadczenie',
+	'warning signs': 'znaki ostrzegawcze',
 }
 
 let knownWords = []
@@ -260,5 +263,6 @@ function restart() {
 	document.getElementById('mode-select').classList.remove('hidden')
 	updateProgress()
 }
+
 
 
