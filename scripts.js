@@ -1,113 +1,23 @@
-const words = {
-	'chronic stress': 'przewlekły stres',
-	'develop bad habits': 'wykształcić złe nawyki',
-	'sedentary lifestyle': 'siedzący tryb życia',
-	'severely affect sth': 'mieć poważny, negatywny wpływ na coś',
-	'vigorous exercise': 'intensywne ćwiczenia',
-	wrist: 'nadgarstek',
-	gum: 'dziąsło',
-	joint: 'staw',
-	kidney: 'nerka',
-	knuckle: 'knykieć',
-	liver: 'wątroba',
-	lung: 'płuco',
-	palm: 'dłoń',
-	ribs: 'żebra',
-	sole: 'podeszwa',
-	vein: 'żyła',
-	'acute tension': 'silne napięcie',
-	'be black and blue': 'być posiniaczonym',
-	bruise: 'siniak',
-	'chronic distress': 'przewlekły ból',
-	'come out in a rash': 'dostać wysypki',
-	diarrhea: 'biegunka',
-	'have blurred vision': 'widzieć nieostro',
-	irritability: 'drażliwość',
-	measles: 'odra',
-	mumps: 'świnka',
-	nausea: 'mdłości',
-	'nervous breakdown': 'załamanie nerwowe',
-	'racing thoughts': 'gonitwa myśli',
-	'red and itchy eyes': 'czerwone i swędzące oczy',
-	'splitting headache': 'rozsadzający ból głowy',
-	stiffness: 'sztywność',
-	'torn ligament': 'naderwane więzadło',
-	tremble: 'drżeć',
-	'ache all over': 'być obolałym',
-	bewildered: 'zdezorientowany',
-	'feel off-colour': 'kiepsko się czuć',
-	'feel under the weather': 'źle się czuć',
-	forgetful: 'roztargniony',
-	heal: 'wydobrzeć',
-	'jet-lagged': 'rozbity po długiej podróży lotniczej przez kilka stref czasowych',
-	'puffed out': 'zasapany',
-	shattered: 'wyczerpany',
-	'acquire immunity': 'zdobyć odporność',
-	'fatal / lethal disease': 'śmiertelna choroba',
-	'global pandemic': 'globalna pandemia',
-	'go into isolation': 'pozostać w izolacji',
-	'go on a waiting list': 'znaleźć się na liście oczekujących',
-	'impose quarantine/restrictions': 'nałożyć kwarantannę/restrykcje',
-	lozenge: 'tabletka do ssania',
-	'maintain your distance': 'zachowywać dystans',
-	'make a good recovery': 'wrócić do zdrowia',
-	'outbreak of an epidemic': 'wybuch epidemii',
-	'remain in a coma': 'pozostawać w śpiączce',
-	'take preventive measures': 'podjąć środki zapobiegawcze',
-	'test positive for sth': 'mieć pozytywny wynik testu na coś',
-	acne: 'trądzik',
-	'breast/prostate cancer': 'nowotwór piersi/prostaty',
-	'cardiovascular disease': 'choroba sercowo-naczyniowa',
-	'cope with stress': 'radzić sobie ze stresem',
-	diabetes: 'cukrzyca',
-	'exacerbate the problem': 'spowodować pogorszenie problemu',
-	'high cholesterol': 'wysoki cholesterol',
-	insomnia: 'bezsenność',
-	'lack of physical activity': 'brak aktywności fizycznej',
-	lump: 'guz 1',
-	bump: 'guz 2',
-	obesity: 'nadwaga',
-	'prevent hypertension': 'zapobiegać nadciśnieniu',
-	'sleeping pills': 'tabletki nasenne',
-	'stomach upsets': 'problemy żołądkowe',
-	'accessible transport system': 'transport dostępny dla osób niepełnosprawnych',
-	'hearing aid': 'aparat słuchowy',
-	'partially sighted': 'niedowidzący',
-	'speech therapist': 'logopeda',
-	stammer: 'jąkać się',
-	'be clean': 'nie brać narkotyków',
-	"beat one`s depression": 'pokonać depresję',
-	'binge-watching': 'maraton filmowy/telewizyjny',
-	'come off drugs': 'rzucić narkotyki',
-	'get hopelessly hooked on': 'zatracić się w nałogu',
-	'rehab centre': 'ośrodek leczenia uzależnień',
-	'take an overdose': 'przedawkować',
-	'blocked airways': 'zablokowane drogi oddechowe',
-	'dress a cut/wound': 'opatrzyć skaleczenie/ranę',
-	stitches: 'szwy',
-	stretcher: 'nosze',
-	stroke: 'udar mózgu',
-	'suffer minor injuries': 'odnieść niewielkie obrażenia',
-	'have a rough idea of sth': 'z grubsza coś wiedzieć, w przybliżeniu',
-	'host of sth': 'mnóstwo czegoś',
-	'major factor': 'główny czynnik',
-	'make headlines': 'stać się sławnym',
-	taster: 'przedsmak',
-	'conducive to sth': 'sprzyjający czemuś',
-	'contract a disease/a virus': 'zarazić się chorobą/wirusem',
-	'lingering effect': 'długotrwały efekt',
-	'meticulous records': 'skrupulatne zapisy',
-	'sense of sth': 'poczucie czegoś',
-	'small/large measure of sth': 'odrobina/dużo czegoś',
-	'traumatising experience': 'traumatyczne doświadczenie',
-	'warning signs': 'znaki ostrzegawcze',
-}
+let words = {}
+let totalWords = 0
+fetch('words.json')
+	.then(response => {
+		if (!response.ok) {
+			throw new Error('Nie udało się wczytać pliku words.json')
+		}
+		return response.json()
+	})
+	.then(data => {
+		words = data
+		totalWords = Object.keys(words).length
+		document.querySelectorAll('#total-words').forEach(el => (el.innerText = totalWords))
+	})
+	.catch(error => {
+		console.error('Błąd podczas ładowania słówek:', error)
+	})
 
 let knownWords = []
 let currentMode = ''
-let totalWords = Object.keys(words).length
-
-document.querySelectorAll('#total-words').forEach(el => (el.innerText = totalWords))
 
 function updateProgress() {
 	const progress = knownWords.length
@@ -115,7 +25,7 @@ function updateProgress() {
 	document.getElementById('multiple-choice-progress').innerText = progress
 	document.getElementById('typing-test-progress').innerText = progress
 
-	if (progress === totalWords) {
+	if (totalWords > 0 && progress === totalWords) {
 		document.getElementById('flashcards-mode').classList.add('hidden')
 		document.getElementById('multiple-choice-mode').classList.add('hidden')
 		document.getElementById('typing-test-mode').classList.add('hidden')
@@ -214,6 +124,9 @@ function startTypingTest() {
 	currentMode = 'typing'
 	document.getElementById('typing-test-mode').classList.remove('hidden')
 	document.getElementById('mode-select').classList.add('hidden')
+	document.getElementById('typing-answer').addEventListener('keyup', function (event) {
+		if (event.key === 'Enter') checkTypingAnswer()
+	})
 	loadNextTypingQuestion()
 }
 
@@ -229,12 +142,6 @@ function loadNextTypingQuestion() {
 	document.getElementById('typing-question').innerText = words[randomWord]
 	document.getElementById('typing-answer').value = ''
 	document.getElementById('typing-result').innerText = ''
-
-	document.getElementById('typing-answer').addEventListener('keydown', function (event) {
-		if (event.key === 'Enter') {
-			checkTypingAnswer()
-		}
-	})
 }
 
 function checkTypingAnswer() {
@@ -245,7 +152,9 @@ function checkTypingAnswer() {
 	if (userAnswer.toLowerCase() === correctWord.toLowerCase()) {
 		document.getElementById('typing-result').innerText = 'Poprawnie!'
 		document.getElementById('typing-result').className = 'correct'
-		knownWords.push(correctWord)
+		if (!knownWords.includes(correctWord)) {
+			knownWords.push(correctWord)
+		}
 		updateProgress()
 	} else {
 		document.getElementById(
@@ -262,7 +171,3 @@ function restart() {
 	document.getElementById('mode-select').classList.remove('hidden')
 	updateProgress()
 }
-
-
-
-
